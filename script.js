@@ -218,7 +218,19 @@ From: Almeirazavier`
       name: "Faiz",
       role: "FROM SEKBID 9",
       photo: "assets/foto9.jpg",
-      text:``
+      text:`THANK YOU, OSIS 2025/2026! ❤️
+
+Gak kerasa ya, perjalanan kita selama satu periode akhirnya sampai di penghujung. Banyak banget cerita yang udah kita lewati bareng, mulai dari suka, duka, capeknya persiapan acara, rapat yang panjang, sampai momen-momen random yang pastinya bakal susah dilupain.
+
+Makasih buat semua waktu, tenaga, usaha, dan kebersamaan yang udah kalian kasih selama satu periode ini. Terima kasih juga karena udah mau saling bantu, saling support, dan tetap bertahan meskipun kadang ada banyak tantangan.
+
+I'm so grateful to be part of this amazing team. Kalian bukan cuma sekadar teman satu organisasi, tapi juga bagian dari cerita dan pengalaman yang bakal selalu dikenang.
+
+Semoga setelah ini kita tetap bisa saling sapa, tetap kompak, dan gak jadi asing satu sama lain. Jangan lupain semua kenangan yang udah kita buat, ya!
+
+Once an OSIS member, always a family! 🫶🏻
+
+Sekali lagi, thank you for everything, OSIS 2025/2026! Bangga pernah jadi bagian dari kalian. See you on top! ❤️`
 
     },
     {
