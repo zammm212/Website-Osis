@@ -1,209 +1,490 @@
-
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="theme-color" content="#20251d">
-  <title>Our Chapter | OSIS 25/26</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>suara simpatig</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="grain"></div>
-  <div class="ambient ambient-one"></div>
-  <div class="ambient ambient-two"></div>
 
-  <header class="topbar">
-    <div class="brand">O<span>·</span>25/26</div>
-    <div class="top-label">A LITTLE PIECE OF HISTORY</div>
-    <button class="music-button" id="musicToggle" aria-label="Buka pemutar lagu">
-      <span>♫</span><span>MUSIC</span>
+<header>
+    <div class="header-left">
+        <div class="logo" onclick="showPage('home')">
+            suara<span>simpatig</span>
+        </div>
+
+        <nav>
+            <button onclick="showPage('home')">Beranda</button>
+            <button onclick="showPage('aspirasi')">Aspirasi</button>
+            <button onclick="showPage('ekspresi')">Ruang Ekspresi</button>
+            <button onclick="showPage('lacak')">Lacak Pesan</button>
+          <button onclick="showPage('track')">Beat Time Area</button>
+        </nav>
+    </div>
+  
+    <button class="menu-button" onclick="toggleMenu()" aria-label="Buka menu">
+    <img src="assets/logo.png" alt="Logo Suara Simpatig">
     </button>
-  </header>
 
-  <main id="app">
-    <section class="page active" id="home">
-      <div class="hero">
-        <div class="eyebrow"><span class="status-dot"></span> SMPN 43 JAKARTA · 2025—2026</div>
-        <p class="hero-kicker">TO THE PEOPLE WHO MADE IT MATTER</p>
-        <h1>Our<br><span>Chapter.</span></h1>
-        <p class="hero-description">Bukan cuma tentang apa yang kita kerjakan, tapi tentang siapa saja yang ada di dalam ceritanya.</p>
-        <button class="primary-button" data-go="story">BUKA KENANGAN <span>↗</span></button>
-        <div class="hero-footer"><span>AN UNFORGETTABLE JOURNEY</span><span>01 — 07</span></div>
-      </div>
-      <div class="hero-art">
-        <div class="orbit orbit-one"></div>
-        <div class="orbit orbit-two"></div>
-        <div class="art-sticker sticker-top">MEMORIES<br>VOL. 01</div>
-        <div class="art-card">
-          <span class="art-star">✳</span>
-          <p>some people<br>become a part<br>of your story.</p>
-          <span class="art-signature">— OSIS 25/26</span>
+        <div id="dropdownMenu" class="dropdown-menu">
+
+            <button onclick="menuNavigate('login')">
+                <span>♙</span>
+                Login OSIS
+            </button>
+
+          <button onclick="menuNavigate('tutorial')">
+    <span>▣</span>
+    Tutorial
+          </button>
+          
+            <button onclick="menuNavigate('keterangan')">
+                <span>ⓘ</span>
+                Keterangan
+            </button>
+
+            <button onclick="menuNavigate('fitur')">
+                <span>▦</span>
+                Fitur
+            </button>
+
+            <button onclick="menuNavigate('perjanjian')">
+                <span>▤</span>
+                Perjanjian
+            </button>
+
+            <div class="menu-divider"></div>
+
+            <button onclick="toggleSettings()">
+                <span>⚙</span>
+                Setting
+            </button>
+
+            <div id="settingsPanel" class="settings-panel">
+                <h3>Pengaturan</h3>
+
+                <div class="setting-item">
+                    <span>Mode tampilan</span>
+                    <button id="themeToggle" onclick="toggleTheme()">
+                        Mode Gelap
+                    </button>
+                </div>
+
+                <div class="setting-item">
+                    <span>Ukuran teks</span>
+                    <select id="fontSetting" onchange="changeFontSize()">
+                        <option value="normal">Normal</option>
+                        <option value="large">Besar</option>
+                    </select>
+                </div>
+            </div>
+
         </div>
-        <div class="art-sticker sticker-bottom">MADE WITH<br>MEMORIES ♡</div>
-      </div>
+    </div>
+</header>
+
+
+<main>
+
+    <!-- BERANDA -->
+    <section id="home" class="page active">
+        <div class="content home-content">
+            <p class="tag">RUANG SUARA SISWA</p>
+
+            <h1>Suaramu punya<br>tempat di sini.</h1>
+
+            <p>
+                Tempat untuk menyampaikan pendapat, keluhan,
+                ide, dan cerita tentang lingkungan sekolah.
+            </p>
+
+            <div class="button-group">
+                <button class="primary" onclick="showPage('aspirasi')">
+                    Kirim Aspirasi
+                </button>
+
+              <button class="secondary" onclick="showPage('tutorial')">
+    Tutorial
+              </button>
+              
+                <button class="secondary" onclick="showPage('ekspresi')">
+                    Ruang Ekspresi
+                </button>
+            </div>
+        </div>
     </section>
 
-    <section class="page" id="story">
-      <div class="section-heading">
-        <p class="eyebrow">01 / OUR JOURNEY</p>
-        <h2>It was never<br>just a <span>program.</span></h2>
-        <p class="section-description">Di balik rapat, tugas, acara, dan hari-hari yang melelahkan, ada tawa, cerita, dan orang-orang yang membuat semuanya berarti.</p>
-      </div>
-      <div class="story-note">
-        <span class="note-symbol">✳</span>
-        <div>
-          <p class="note-title">A NOTE TO REMEMBER</p>
-          <p>Mungkin suatu hari nanti kita akan sibuk dengan jalan masing-masing. Tapi bagian dari cerita ini akan selalu jadi milik kita.</p>
+
+    <!-- ASPIRASI -->
+    <section id="aspirasi" class="page">
+        <div class="content">
+            <p class="tag">SUARA KAMU</p>
+            <h1>Aspirasi Sekolah</h1>
+
+            <p>Sampaikan hal yang menurutmu perlu diperbaiki.</p>
+
+            <form id="aspirasiForm">
+                <input type="text" id="nama" placeholder="Nama (opsional)">
+                <input type="text" id="kelas" placeholder="Kelas (opsional)">
+
+                <select id="kategori" required>
+                    <option value="">Pilih kategori</option>
+                    <option>Fasilitas</option>
+                    <option>Kebersihan</option>
+                    <option>Kedisiplinan</option>
+                    <option>Pembelajaran</option>
+                    <option>Kegiatan sekolah</option>
+                    <option>Organisasi siswa</option>
+                    <option>Lingkungan sekolah</option>
+                    <option>Lainnya</option>
+                </select>
+
+                <textarea id="pesan" placeholder="Tuliskan aspirasi kamu..." required></textarea>
+                <textarea id="saran" placeholder="Saran tambahan (opsional)"></textarea>
+
+                <button class="primary">Kirim Aspirasi</button>
+            </form>
         </div>
-      </div>
-      <div class="navigation-row">
-        <button class="secondary-button" data-go="home">← KEMBALI</button>
-        <button class="primary-button" data-go="music">LANJUTKAN <span>↗</span></button>
-      </div>
     </section>
 
-    <section class="page" id="music">
-      <div class="music-page-content">
-        <p class="eyebrow">02 / OUR SOUNDTRACK</p>
-        <h2>A song for<br><span>the memories.</span></h2>
-        <p class="music-page-caption">putar lagu biar makin ngeunah</p>
-        <div class="cassette music-page-cassette">
-          <div class="cassette-label"><span>MEMORIES MIX</span><span>25/26</span></div>
-          <div class="cassette-window">
-            <div class="reel"><span></span></div>
-            <div class="tape-line"></div>
-            <div class="reel"><span></span></div>
-          </div>
-          <div class="cassette-bottom">SIDE A · OUR STORY</div>
-        </div>
-        <p class="section-description">Satu lagu, banyak kenangan. Putar soundtrack yang bakal mengingatkan kita pada perjalanan ini.</p>
 
-        <!-- TAMBAHAN: PEMUTAR MP3 -->
-        <audio id="audioPlayer" controls loop preload="metadata">
-          <source src="assets/lagu-kenangan.mp3" type="audio/mpeg">
-          Browser lu tidak mendukung pemutar audio.
-        </audio>
-
-        <p class="audio-status" id="audioStatus">Lagu kenangan OSIS</p>
-        <button class="primary-button" id="musicPagePlayButton">▶ PUTAR LAGU</button>
-
-        <div class="navigation-row">
-          <button class="secondary-button" data-go="story">← KEMBALI</button>
-          <button class="primary-button" data-go="messages">BACA PESAN <span>↗</span></button>
-        </div>
-      </div>
-    </section>
-
-    <section class="page" id="messages">
-      <div class="section-heading">
-        <p class="eyebrow">03 / WORDS FROM THE HEART</p>
-        <h2>To my fellow<br><span>chapters.</span></h2>
-        <p class="section-description">Terimakasih buat kaka kaka semua yang udah bimbing kami dengan sepenuh hati</p>
-      </div>
-      
-<div class="core-team-photo">
-  <img src="assets/anggota-inti.jpg" alt="Foto anggota inti OSIS 25/26">
-  <p>✳ ANGGOTA INTI OSIS 25/26 ✳</p>
-  <span>Our people, our memories.</span>
+    <!-- RUANG EKSPRESI -->
+<section id="ekspresi" class="page">
+    <div class="coming-soon">
+<div class="coming-icon">
+    <img src="assets/logo.png" alt="Ruang Ekspresi">
 </div>
 
-      <div class="message-grid" id="messageGrid"></div>
-      <div class="navigation-row">
-        <button class="secondary-button" data-go="music">← LAGU</button>
-        <button class="primary-button" data-go="gallery">LIHAT GALERI <span>↗</span></button>
-      </div>
+        <p class="tag">RUANG EKSPRESI</p>
+
+        <h1>Something is<br>coming soon.</h1>
+
+        <p>
+            Kami sedang menyiapkan ruang baru
+            untuk menyampaikan pesan dan berbagi cerita.
+        </p>
+
+        <span class="coming-label">COMING SOON</span>
+
+        <button class="secondary" onclick="showPage('home')">
+            ← Kembali ke Beranda
+        </button>
+    </div>
+</section>
+
+  
+<!-- Beat Time AREA -->
+<section id="track" class="page">
+    <div class="content">
+        <p class="tag">BEAT TIME AREA</p>
+        <h1>Music for<br>your school.</h1>
+
+        <p>Request lagu yang ingin kamu dengarkan di sekolah.</p>
+
+        <form id="trackRequestForm">
+            <input
+                type="text"
+                id="trackTitle"
+                placeholder="Judul lagu"
+                maxlength="150"
+                required
+            >
+
+            <input
+                type="text"
+                id="trackArtist"
+                placeholder="Nama penyanyi"
+                maxlength="100"
+                required
+            >
+
+            <input
+                type="url"
+                id="trackSpotify"
+                placeholder="Link Spotify (opsional)"
+            >
+
+            <input
+                type="text"
+                id="trackRequester"
+                placeholder="Nama kamu"
+                maxlength="80"
+                required
+            >
+
+            <input
+                type="text"
+                id="trackClass"
+                placeholder="Kelas"
+                maxlength="20"
+                required
+            >
+
+            <label for="trackDate">Tanggal pemutaran</label>
+            <input
+                type="date"
+                id="trackDate"
+                required
+            >
+
+            <button class="primary" type="submit">
+                Kirim Request
+            </button>
+        </form>
+
+        <p id="trackRequestStatus"></p>
+
+        <div class="track-leaderboard">
+            <h2>Top 12 Lagu</h2>
+            <div id="trackLeaderboard">
+                Memuat leaderboard...
+            </div>
+        </div>
+
+        <div class="track-schedule">
+            <h2>Jadwal Pemutaran</h2>
+            <div id="trackScheduleList">
+                Memuat jadwal...
+            </div>
+        </div>
+    </div>
+</section>
+
+  
+    <!-- LACAK PESAN -->
+    <section id="lacak" class="page">
+        <div class="content">
+            <p class="tag">PELACAKAN</p>
+            <h1>Lacak Pesan</h1>
+
+            <p>Masukkan kode yang kamu dapatkan setelah mengirim pesan.</p>
+
+            <form id="lacakForm">
+                <input type="text" id="kodeLacak" placeholder="Contoh: SK-ABC123" required>
+                <button class="primary">Lacak Sekarang</button>
+            </form>
+
+            <div id="hasilLacak"></div>
+        </div>
     </section>
 
-    <section class="page" id="gallery">
-      <div class="section-heading gallery-heading">
-        <p class="eyebrow">04 / THE LITTLE THINGS</p>
-        <h2>Kept in<br><span>frames.</span></h2>
-        <p class="section-description">Momen yang mungkin terlihat sederhana, tetapi berarti banyak. Tekan foto untuk melihatnya lebih dekat.</p>
-      </div>
-      <div class="gallery-grid" id="galleryGrid"></div>
-      <div class="navigation-row">
-        <button class="secondary-button" data-go="messages">← PESAN</button>
-        <button class="primary-button" data-go="ending">PENUTUP <span>↗</span></button>
-      </div>
+
+  <!-- TUTORIAL -->
+<section id="tutorial" class="page">
+    <div class="content">
+        <p class="tag">PANDUAN PENGGUNA</p>
+        <h1>Cara menggunakan suara simpatig</h1>
+
+        <div class="feature-list">
+            <div class="feature-card">
+                <h3>01. Kirim Aspirasi</h3>
+                <p>Buka menu Aspirasi, isi kategori dan pesan yang ingin disampaikan. Nama dan kelas boleh dikosongkan.</p>
+            </div>
+
+            <div class="feature-card">
+                <h3>02. Simpan Kode</h3>
+                <p>Setelah mengirim aspirasi, kamu akan mendapatkan kode khusus. Simpan kode tersebut.</p>
+            </div>
+
+            <div class="feature-card">
+                <h3>03. Lacak Pesan</h3>
+                <p>Buka menu Lacak Pesan, masukkan kode yang sudah didapatkan, lalu tekan Lacak Sekarang.</p>
+            </div>
+
+            <div class="feature-card">
+                <h3>04. Baca Balasan</h3>
+                <p>Periksa status aspirasi dan riwayat balasan dari OSIS melalui halaman pelacakan.</p>
+            </div>
+        </div>
+
+        <button class="secondary" onclick="showPage('home')">
+            ← Kembali ke Beranda
+        </button>
+    </div>
+</section>
+  
+    <!-- KETERANGAN -->
+    <section id="keterangan" class="page">
+        <div class="content">
+            <p class="tag">TENTANG PLATFORM</p>
+            <h1>Apa itu suara simpatig?</h1>
+
+            <p>
+                suara simpatig merupakan ruang digital untuk siswa
+                menyampaikan aspirasi dan ekspresi mengenai
+                kehidupan sekolah.
+            </p>
+
+            <p>
+                Setiap pesan yang masuk dapat ditinjau oleh
+                pengelola sebelum ditindaklanjuti.
+            </p>
+        </div>
     </section>
 
-    <section class="page" id="ending">
-      <div class="ending-content">
-        <div class="ending-star">✳</div>
-        <p class="eyebrow">THE END OF A CHAPTER</p>
-        <h2>Once a team,<br><span>always a memory.</span></h2>
-        <p class="section-description">Terima kasih sudah menjadi bagian dari perjalanan ini. Terima kasih untuk waktu, usaha, tawa, dan hal-hal kecil yang mungkin tidak sempat kita ucapkan satu per satu.</p>
-        <div class="ending-signature">With love, OSIS 25/26 ♡</div>
-        <button class="primary-button" data-go="thankyou">HALAMAN TERAKHIR ↗</button>
-      </div>
+
+    <!-- FITUR -->
+    <section id="fitur" class="page">
+        <div class="content">
+            <p class="tag">YANG BISA KAMU LAKUKAN</p>
+            <h1>Fitur suara simpatig</h1>
+
+            <div class="feature-list">
+                <div class="feature-card">
+                    <h3>Aspirasi Sekolah</h3>
+                    <p>Kirim pendapat dan keluhan mengenai sekolah.</p>
+                    <button onclick="showPage('aspirasi')">Buka →</button>
+                </div>
+
+                <div class="feature-card">
+                    <h3>Ruang Ekspresi</h3>
+                    <p>Sampaikan pesan dan apresiasi kepada seseorang.</p>
+                    <button onclick="showPage('ekspresi')">Buka →</button>
+                </div>
+
+                <div class="feature-card">
+                    <h3>Lacak Pesan</h3>
+                    <p>Pantau perkembangan pesan menggunakan kode.</p>
+                    <button onclick="showPage('lacak')">Buka →</button>
+                </div>
+            </div>
+        </div>
     </section>
 
-    <section class="page thankyou-page" id="thankyou">
-      <div class="thankyou-content">
-        <h2>thankyou OSIS 25'²⁷</h2>
-        <p>-Azzam,Faiz,Almeira,Amy,Hafeezur,Lingga,Afnan,Afiqah,Juna,Zalykha</p>
-      </div>
+
+    <!-- PERJANJIAN -->
+    <section id="perjanjian" class="page">
+        <div class="content">
+            <p class="tag">ATURAN PENGGUNAAN</p>
+            <h1>Perjanjian Pengguna</h1>
+
+            <div class="agreement">
+                <p>1. Gunakan platform dengan sopan dan bertanggung jawab.</p>
+                <p>2. Dilarang mengirim ancaman, hinaan, atau fitnah.</p>
+                <p>3. Jangan membagikan informasi pribadi orang lain.</p>
+                <p>4. Pesan dapat ditinjau oleh pengelola.</p>
+                <p>5. Pesan yang melanggar aturan dapat ditolak.</p>
+                <p>6. Jangan menggunakan fitur untuk mengganggu orang lain.</p>
+            </div>
+        </div>
     </section>
-  </main>
 
-  <footer class="bottom-bar">
-    <span>OSIS SMPN 43 JAKARTA</span>
-    <span id="pageCounter">01 / 07</span>
-    <span>OUR CHAPTER © 2026</span>
-  </footer>
 
-  <div class="music-panel" id="musicPanel">
-    <div class="cassette">
-      <div class="cassette-label"><span>MEMORIES MIX</span><span>25/26</span></div>
-      <div class="cassette-window">
-        <div class="reel"><span></span></div>
-        <div class="tape-line"></div>
-        <div class="reel"><span></span></div>
-      </div>
-      <div class="cassette-bottom">SIDE A · OUR STORY</div>
+    <!-- LOGIN -->
+    <section id="login" class="page">
+        <div class="login-box">
+            <p class="tag">AREA PENGELOLA</p>
+            <h1>Login OSIS</h1>
+            <p>Masuk untuk mengelola pesan yang diterima.</p>
+
+            <form id="loginForm">
+                <input type="email" id="username" placeholder="Username" required>
+                <input type="password" id="password" placeholder="Password" required>
+                <button class="primary">Masuk Dashboard</button>
+            </form>
+
+            <p id="loginError" class="error"></p>
+
+            <button class="back-button" onclick="showPage('home')">
+                ← Kembali ke beranda
+            </button>
+        </div>
+    </section>
+
+
+    <!-- DASHBOARD -->
+    <section id="dashboard" class="page">
+        <div class="dashboard-container">
+
+            <div class="dashboard-header">
+                <div>
+                    <p class="tag">PANEL PENGELOLA</p>
+                    <h1>Dashboard OSIS</h1>
+                    <p>Selamat datang, <span id="adminName">Admin</span>.</p>
+                </div>
+
+                <button class="logout-button" onclick="logout()">Keluar</button>
+            </div>
+
+            <div class="stats">
+                <div class="stat-card">
+                    <span>Total Pesan</span>
+                    <h2 id="totalPesan">0</h2>
+                </div>
+
+                <div class="stat-card">
+                    <span>Aspirasi</span>
+                    <h2 id="totalAspirasi">0</h2>
+                </div>
+
+                <div class="stat-card">
+                    <span>Ekspresi</span>
+                    <h2 id="totalEkspresi">0</h2>
+                </div>
+            </div>
+
+            <div class="message-section">
+                <h2>Pesan Masuk</h2>
+
+                <select id="filterPesan" onchange="renderMessages()">
+                    <option value="semua">Semua pesan</option>
+                    <option value="Aspirasi Sekolah">Aspirasi</option>
+                    <option value="Ruang Ekspresi">Ruang Ekspresi</option>
+                </select>
+
+                <div id="messageList"></div>
+              <div class="track-admin-section">
+    <div class="track-admin-header">
+        <div>
+            <p class="tag">Beat Time AREA</p>
+            <h2>Request Lagu Masuk</h2>
+            <p id="trackAdminPeriod">Memuat periode...</p>
+        </div>
+
+        <button class="secondary" onclick="loadTrackAdminRequests()">
+            Refresh
+        </button>
     </div>
-    <div class="music-info">
-      <p class="eyebrow">NOW PLAYING</p>
-      <p class="music-title" id="musicTitle">Lagu kenangan OSIS</p>
-      <p class="music-subtitle" id="musicSubtitle">MP3 · Our soundtrack</p>
-      <button class="secondary-button" id="musicPlayButton">▶ PUTAR LAGU</button>
+
+    <div id="trackRequestAdminList">
+        Memuat request lagu...
     </div>
-  </div>
 
-  <dialog class="modal" id="messageModal">
-    <button class="modal-close" id="closeMessage" aria-label="Tutup">×</button>
-    <div class="modal-content">
-      <div class="modal-photo photo-frame" id="messageModalPhoto"></div>
-      <div class="modal-copy">
-        <p class="eyebrow" id="messageRole">A LITTLE NOTE</p>
-        <h2 id="messageName">Untuk kamu.</h2>
-        <p id="messageText"></p>
-        <button class="primary-button" id="nextMessage">PESAN BERIKUTNYA →</button>
-      </div>
-    </div>
-  </dialog>
+                <div class="track-reset-section">
+    <h3>Reset Beat Time Area</h3>
+    <p>Mulai periode request lagu yang baru.</p>
 
-  <dialog class="modal photo-modal" id="photoModal">
-    <button class="modal-close" id="closePhoto" aria-label="Tutup">×</button>
-    <div class="photo-viewer">
-      <button class="viewer-arrow" id="previousPhoto" aria-label="Foto sebelumnya">‹</button>
-      <div class="viewer-image-wrap" id="viewerImageWrap"></div>
-      <button class="viewer-arrow" id="nextPhoto" aria-label="Foto berikutnya">›</button>
-    </div>
-    <p class="viewer-caption" id="viewerCaption"></p>
-    <p class="viewer-counter" id="viewerCounter"></p>
-  </dialog>
+    <input
+        type="password"
+        id="trackResetCode"
+        placeholder="Masukkan kode khusus OSIS"
+    >
 
-  <!-- Modal Spotify lama tetap dipertahankan agar kode HTML asli tidak dihapus -->
-  <dialog class="modal spotify-modal" id="spotifyModal">
-    <button class="modal-close" id="closeSpotify" aria-label="Tutup">×</button>
-    <p class="eyebrow">OUR SOUNDTRACK</p>
-    <h2>A song for<br><span>the memories.</span></h2>
-    <div id="spotifyEmbed"></div>
-    <a id="spotifyOpenLink" class="secondary-button external-link" href="https://open.spotify.com/" target="_blank" rel="noopener">BUKA DI SPOTIFY ↗</a>
-  </dialog>
+    <button
+        class="secondary"
+        type="button"
+        onclick="resetTrackPeriod()"
+    >
+        Reset Leaderboard
+    </button>
 
-  <script src="script.js"></script>
+    <p id="trackResetStatus"></p>
+                </div>
+                
+              </div>
+            </div>
+
+        </div>
+    </section>
+
+</main>
+
+<footer>
+    <p>suara simpatig · Ruang aspirasi dan ekspresi siswa</p>
+</footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="script.js"></script>
 </body>
 </html>
